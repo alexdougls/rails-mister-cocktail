@@ -1,0 +1,22 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1559443922-3f698a0ff27a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=738&q=80);">
+  <div class="container">
+    <h1>Our Different Cocktails</h1>
+    <p>Discover our exclusive collection of premium cocktails</p>
+  </div>
+</div>
+
+<div class="container">
+  <h3 class="text-center my-4">Cocktails</h3>
+  <div class="cards">
+    <%= link_to new_cocktail_path do %>
+      <div class="card-category new-cocktail-card">
+        <i class="fas fa-plus"></i>
+      </div>
+    <% end %>
+    <% @cocktails.each do |cocktail| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1546171753-97d7676e4602?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80)">
+        <%= link_to cocktail.name, cocktail_path(cocktail) %>
+      </div>
+    <% end %>
+  </div>
+</div>
